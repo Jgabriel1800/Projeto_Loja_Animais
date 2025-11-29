@@ -1,10 +1,10 @@
 #Projeto Loja de Animais
 -----------------------------------------------------------------------------------
-Descrição
+#Descrição
 
 Este projeto é um sistema de gerenciamento para uma loja de animais, desenvolvido em Java com interface gráfica (Swing). Ele permite o cadastro e gerenciamento de clientes, produtos e vendas, além de gerar relatórios de desempenho da loja.
 -----------------------------------------------------------------------------------
-Funcionalidades
+#Funcionalidades
 
 Clientes
 
@@ -38,7 +38,7 @@ Total vendido no mês.
 
 Melhor cliente (por valor total).
 -----------------------------------------------------------------------------------
-Tecnologias
+#Tecnologias
 
 Java 11
 
@@ -46,8 +46,10 @@ Swing (GUI)
 
 Serialização de objetos para persistência em arquivos .dat
 -----------------------------------------------------------------------------------
-Estrutura de Pastas
+#Estrutura de Pastas
+
 Loja_De_Animais/
+
 │
 
 ├── camada_apresentacao/   # Telas e interface gráfica
@@ -62,7 +64,7 @@ Loja_De_Animais/
 
 └── database/              # Arquivos .dat com dados persistentes
 -----------------------------------------------------------------------------------
-Como Rodar
+#Como Rodar
 
 Certifique-se de ter o Java 11 instalado.
 
@@ -74,7 +76,7 @@ Utilize a interface gráfica para cadastrar clientes, produtos e registrar venda
 
 Relatórios podem ser acessados pela tela de relatórios.
 -----------------------------------------------------------------------------------
-Observações
+#Observações
 
 Os dados são armazenados localmente em arquivos .dat dentro da pasta database.
 
