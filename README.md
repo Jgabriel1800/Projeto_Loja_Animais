@@ -1,11 +1,12 @@
 #Projeto Loja de Animais
 -----------------------------------------------------------------------------------
 #Descrição
+-----------------------------------------------------------------------------------
 
 Este projeto é um sistema de gerenciamento para uma loja de animais, desenvolvido em Java com interface gráfica (Swing). Ele permite o cadastro e gerenciamento de clientes, produtos e vendas, além de gerar relatórios de desempenho da loja.
------------------------------------------------------------------------------------
-#Funcionalidades
 
+#Funcionalidades
+-----------------------------------------------------------------------------------
 Clientes
 
 Cadastrar, listar e remover clientes.
@@ -37,16 +38,18 @@ Produto menos vendido.
 Total vendido no mês.
 
 Melhor cliente (por valor total).
------------------------------------------------------------------------------------
+
 #Tecnologias
+-----------------------------------------------------------------------------------
 
 Java 11
 
 Swing (GUI)
 
 Serialização de objetos para persistência em arquivos .dat
------------------------------------------------------------------------------------
+
 #Estrutura de Pastas
+-----------------------------------------------------------------------------------
 
 Loja_De_Animais/
 
@@ -63,8 +66,9 @@ Loja_De_Animais/
 ├── excessoes/             # Tratamento de exceções personalizadas
 
 └── database/              # Arquivos .dat com dados persistentes
------------------------------------------------------------------------------------
+
 #Como Rodar
+-----------------------------------------------------------------------------------
 
 Certifique-se de ter o Java 11 instalado.
 
@@ -75,10 +79,10 @@ Execute MainApp.java.
 Utilize a interface gráfica para cadastrar clientes, produtos e registrar vendas.
 
 Relatórios podem ser acessados pela tela de relatórios.
------------------------------------------------------------------------------------
+
 #Observações
+-----------------------------------------------------------------------------------
 
 Os dados são armazenados localmente em arquivos .dat dentro da pasta database.
 
 Produtos, clientes e vendas possuem IDs gerados automaticamente para controle interno.
------------------------------------------------------------------------------------
