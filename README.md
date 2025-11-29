@@ -1,4 +1,5 @@
 #Projeto Loja de Animais
+
 Descrição
 
 Este projeto é um sistema de gerenciamento para uma loja de animais, desenvolvido em Java com interface gráfica (Swing). Ele permite o cadastro e gerenciamento de clientes, produtos e vendas, além de gerar relatórios de desempenho da loja.
