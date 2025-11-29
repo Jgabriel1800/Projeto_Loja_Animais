@@ -49,11 +49,17 @@ Serialização de objetos para persistência em arquivos .dat
 Estrutura de Pastas
 Loja_De_Animais/
 │
+
 ├── camada_apresentacao/   # Telas e interface gráfica
+
 ├── camada_servico/        # Lógica de negócio e serviços
+
 ├── camada_persistencia/   # DAOs e utilitários de arquivo
+
 ├── camada_negocio/        # Classes de negócio (Cliente, Produto, Venda, etc.)
+
 ├── excessoes/             # Tratamento de exceções personalizadas
+
 └── database/              # Arquivos .dat com dados persistentes
 -----------------------------------------------------------------------------------
 Como Rodar
