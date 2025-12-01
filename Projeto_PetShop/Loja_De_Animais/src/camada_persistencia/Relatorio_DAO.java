@@ -25,43 +25,6 @@ public class Relatorio_DAO {
         return total;
     }
 
-    // Produto mais vendido
-    public String produtoMaisVendido() {
-        List<Venda> vendas = vendaDAO.listarVendas();
-        Map<String, Integer> contagem = new HashMap<>();
-
-        for (Venda v : vendas) {
-            v.getItens().forEach(item -> {
-                String nome = item.getProduto().getNome();
-                contagem.put(nome, contagem.getOrDefault(nome, 0) + item.getQuantidade());
-            });
-        }
-
-        return contagem.entrySet().stream()
-                .max(Map.Entry.comparingByValue())
-                .map(Map.Entry::getKey)
-                .orElse("Nenhum produto vendido");
-    }
-
-    // Produto menos vendido
-    public String produtoMenosVendido() {
-        List<Venda> vendas = vendaDAO.listarVendas();
-        Map<String, Integer> contagem = new HashMap<>();
-
-        for (Venda v : vendas) {
-            v.getItens().forEach(item -> {
-                String nome = item.getProduto().getNome();
-                contagem.put(nome, contagem.getOrDefault(nome, 0) + item.getQuantidade());
-            });
-        }
-
-        return contagem.entrySet().stream()
-                .min(Map.Entry.comparingByValue())
-                .map(Map.Entry::getKey)
-                .orElse("Nenhum produto vendido");
-    }
-
-    // Melhor cliente
     public String melhorCliente() {
         List<Venda> vendas = vendaDAO.listarVendas();
         Map<String, Double> totalCliente = new HashMap<>();

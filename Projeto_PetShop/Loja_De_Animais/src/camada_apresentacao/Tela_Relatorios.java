@@ -13,15 +13,11 @@ public class Tela_Relatorios extends JFrame {
         setSize(400, 350);
         setLocationRelativeTo(null);
 
-        JButton btnMaisVendido = new JButton("Produto Mais Vendido");
-        JButton btnMenosVendido = new JButton("Produto Menos Vendido");
         JButton btnTotalMes = new JButton("Total Vendido no Mês");
         JButton btnMelhorCliente = new JButton("Melhor Cliente");
         JButton btnDiaMaisVendas = new JButton("Dia com Mais Vendas");
 
-        JPanel panel = new JPanel(new GridLayout(5, 1, 10, 10));
-        panel.add(btnMaisVendido);
-        panel.add(btnMenosVendido);
+        JPanel panel = new JPanel(new GridLayout(3, 1, 10, 10));
         panel.add(btnTotalMes);
         panel.add(btnMelhorCliente);
         panel.add(btnDiaMaisVendas);
@@ -29,17 +25,6 @@ public class Tela_Relatorios extends JFrame {
         add(panel);
 
         Relatorio_DAO relatorioDAO = new Relatorio_DAO();
-
-        // ----------------- ACTIONS -----------------
-        btnMaisVendido.addActionListener(e -> {
-            String produto = relatorioDAO.produtoMaisVendido();
-            JOptionPane.showMessageDialog(this, "Produto mais vendido: " + produto);
-        });
-
-        btnMenosVendido.addActionListener(e -> {
-            String produto = relatorioDAO.produtoMenosVendido();
-            JOptionPane.showMessageDialog(this, "Produto menos vendido: " + produto);
-        });
 
         btnTotalMes.addActionListener(e -> {
             try {
