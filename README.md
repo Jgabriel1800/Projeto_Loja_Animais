@@ -31,10 +31,6 @@ Armazenamento persistente em arquivo .dat.
 
 Relatórios
 
-Produto mais vendido.
-
-Produto menos vendido.
-
 Total vendido no mês.
 
 Melhor cliente (por valor total).
