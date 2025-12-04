@@ -36,14 +36,13 @@ public class Tela_Cadastro_Cliente extends JFrame {
 
 	    add(panel);
 
-	    // Conexão com o Service
 	    Cliente_Service clienteService = new Cliente_Service();
 
 	    btnSalvar.addActionListener(e -> {
 	        try {
 	            String nome = txtNome.getText();
 	            String telefone = txtTelefone.getText();
-	            String cpf = txtCPF.getText(); // você está usando txtEmail como CPF aqui
+	            String cpf = txtCPF.getText();
 	            if (nome.isEmpty() || telefone.isEmpty() || cpf.isEmpty()) {
 	                JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
 	                return;

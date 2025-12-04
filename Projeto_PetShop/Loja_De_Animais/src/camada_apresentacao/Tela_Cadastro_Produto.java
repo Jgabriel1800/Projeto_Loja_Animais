@@ -10,7 +10,7 @@ public class Tela_Cadastro_Produto extends JFrame {
 
     public Tela_Cadastro_Produto() {
         setTitle("Cadastro de Produtos");
-        setSize(450, 400);
+        setSize(450, 450);
         setLocationRelativeTo(null);
 
         JLabel lblNome = new JLabel("Nome:");
@@ -28,20 +28,23 @@ public class Tela_Cadastro_Produto extends JFrame {
 
         JButton btnSalvar = new JButton("Salvar Produto");
         JButton btnListar = new JButton("Listar Produtos");
+        JButton btnEditar = new JButton("Editar Produto");
+        JButton btnRemover = new JButton("Remover Produto");
 
-        JPanel panel = new JPanel(new GridLayout(7, 2, 5, 5));
+        JPanel panel = new JPanel(new GridLayout(9, 2, 5, 5));
         panel.add(lblNome); panel.add(txtNome);
         panel.add(lblPreco); panel.add(txtPreco);
         panel.add(lblEstoque); panel.add(txtEstoque);
         panel.add(lblEstoqueMin); panel.add(txtEstoqueMin);
         panel.add(lblTipo); panel.add(cbTipo);
+
         panel.add(btnSalvar); panel.add(btnListar);
+        panel.add(btnEditar); panel.add(btnRemover);
 
         add(panel);
 
         Produto_Service produtoService = new Produto_Service();
 
-        // ----------------- ACTIONS -----------------
         btnSalvar.addActionListener(e -> {
             try {
                 String nome = txtNome.getText();
@@ -53,24 +56,23 @@ public class Tela_Cadastro_Produto extends JFrame {
                 Produto produto;
                 switch (tipo) {
                     case "Alimento":
-                        produto = new Produto_Alimento(nome, preco, estoque, "01/01/2025"); // você pode adicionar campo para validade
+                        produto = new Produto_Alimento(nome, preco, estoque, "01/01/2025");
                         break;
                     case "Brinquedo":
-                        produto = new Produto_Brinquedo(nome, preco, estoque, 3); // idade padrão 3 anos
+                        produto = new Produto_Brinquedo(nome, preco, estoque, 3);
                         break;
                     case "Higiene":
                         produto = new Produto_Higiene(nome, preco, estoque, false);
                         break;
                     default:
-                        throw new IllegalArgumentException("Tipo de produto inválido");
+                        throw new IllegalArgumentException("Tipo inválido");
                 }
 
                 produto.setEstoqueMinimo(estoqueMin);
                 produtoService.cadastrarProduto(produto);
                 JOptionPane.showMessageDialog(this, "Produto cadastrado com sucesso!");
             } catch (Exception ex) {
-                ex.printStackTrace();
-                JOptionPane.showMessageDialog(this, "Erro ao cadastrar produto: " + ex.getMessage());
+                JOptionPane.showMessageDialog(this, "Erro ao cadastrar: " + ex.getMessage());
             }
         });
 
@@ -81,5 +83,8 @@ public class Tela_Cadastro_Produto extends JFrame {
             }
             JOptionPane.showMessageDialog(this, sb.length() > 0 ? sb.toString() : "Nenhum produto cadastrado.");
         });
+
+        btnEditar.addActionListener(e -> new Tela_Editar_Produto().setVisible(true));
+        btnRemover.addActionListener(e -> new Tela_Remover_Produto().setVisible(true));
     }
 }

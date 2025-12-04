@@ -14,7 +14,6 @@ public class Relatorio_Service {
         this.vendaDAO = new Venda_DAO();
     }
 
-    // Total de vendas do mês (somatória dos valores das vendas)
     public double calcularTotalVendasMes(int mes, int ano) {
         List<Venda> vendas = vendaDAO.listarVendas();
         double total = 0.0;
@@ -27,7 +26,6 @@ public class Relatorio_Service {
         return total;
     }
 
-    // Melhor cliente (quem comprou mais em valor)
     public String melhorCliente() {
         List<Venda> vendas = vendaDAO.listarVendas();
         Map<String, Double> totalCliente = new HashMap<>();

@@ -40,7 +40,6 @@ public class Relatorio_DAO {
                 .orElse("Nenhum cliente encontrado");
     }
 
-    // Dia com mais vendas
     public String diaComMaisVendas() {
         List<Venda> vendas = vendaDAO.listarVendas();
         Map<String, Integer> contagemDias = new HashMap<>();

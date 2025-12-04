@@ -40,11 +40,9 @@ public class Tela_Vendas extends JFrame {
         Produto_Service produtoService = new Produto_Service();
         Vendas_Service vendasService = new Vendas_Service();
 
-        // ----------------- POPULAR COMBOBOX -----------------
         for (Cliente c : clienteService.listarClientes()) cbCliente.addItem(c);
         for (Produto p : produtoService.listarProdutos()) cbProduto.addItem(p);
 
-        // ----------------- ACTIONS -----------------
         btnAdicionar.addActionListener(e -> {
             try {
                 Produto produto = (Produto) cbProduto.getSelectedItem();
@@ -85,7 +83,6 @@ public class Tela_Vendas extends JFrame {
                 vendasService.registrarVenda(venda);
                 JOptionPane.showMessageDialog(this, "Venda registrada com sucesso!");
 
-                // Atualizar estoque dos produtos
                 for (Item_Venda item : itensVenda) {
                     Produto p = item.getProduto();
                     p.setEstoque(p.getEstoque() - item.getQuantidade());

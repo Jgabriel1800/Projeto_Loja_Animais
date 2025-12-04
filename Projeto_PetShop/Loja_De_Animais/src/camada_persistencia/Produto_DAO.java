@@ -21,7 +21,6 @@ public class Produto_DAO {
             if (obj != null) {
                 produtos = (List<Produto>) obj;
 
-                // Ajustar ID automaticamente
                 if (!produtos.isEmpty()) {
                     geradorId = produtos.stream()
                             .mapToInt(Produto::getId)
@@ -49,9 +48,6 @@ public class Produto_DAO {
         }
     }
 
-    // -------------------------
-    // MÉTODOS CRUD
-    // -------------------------
     public void inserir(Produto p) {
         if (p.getId() == 0) {
             p.setId(geradorId++);

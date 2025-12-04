@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Venda implements Serializable {
-	private static final long serialVersionUID = 1L;
-	
+    private static final long serialVersionUID = 1L;
+
     private int id;
     private Cliente cliente;
     private LocalDate data;
@@ -18,6 +18,10 @@ public class Venda implements Serializable {
         this.cliente = cliente;
         this.data = LocalDate.now();
         this.itens = new ArrayList<>();
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getId() {
@@ -47,12 +51,11 @@ public class Venda implements Serializable {
         }
         return total;
     }
-    
+
     public double calcularTotal() {
         return getTotal();
     }
 
-    @Override
     public String toString() {
         return "Venda ID: " + id + " | Cliente: " + cliente.getNome() + " | Total: R$ " + getTotal();
     }

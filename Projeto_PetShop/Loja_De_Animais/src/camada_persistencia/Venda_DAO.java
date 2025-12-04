@@ -6,7 +6,7 @@ import camada_negocio.Venda;
 
 public class Venda_DAO {
 
-	private static final String CAMINHO = "C:/Users/soare/OneDrive/Área de Trabalho/Projeto_PetShop/Loja_De_Animais/database/vendas.dat";
+    private static final String CAMINHO = "C:/Users/soare/OneDrive/Área de Trabalho/Projeto_PetShop/Loja_De_Animais/database/vendas.dat";
     private List<Venda> vendas;
     private int geradorId = 1;
 
@@ -21,7 +21,6 @@ public class Venda_DAO {
             if (obj != null) {
                 vendas = (List<Venda>) obj;
 
-                // Ajustar ID automaticamente
                 if (!vendas.isEmpty()) {
                     geradorId = vendas.stream()
                             .mapToInt(Venda::getId)
@@ -49,14 +48,11 @@ public class Venda_DAO {
         }
     }
 
-    // -------------------------
-    // MÉTODOS CRUD
-    // -------------------------
     public void inserir(Venda v) {
         if (v.getId() == 0) {
-            v = new Venda(geradorId++, v.getCliente());
-            v.getItens().addAll(v.getItens());
+            v.setId(geradorId++);
         }
+
         vendas.add(v);
         salvar();
     }
